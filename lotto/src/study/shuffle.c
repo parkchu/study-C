@@ -14,6 +14,14 @@ int	main(void)
 		printf("number: %d\n", balls.value[index]);
 		index++;
 	}
+	printf("-----------------------");
+	balls = shuffle(balls);
+	index = 0;
+	while (index < 45)
+	{
+		printf("number: %d\n", balls.value[index]);
+		index++;
+	}
 }
 
 balls	make_balls()

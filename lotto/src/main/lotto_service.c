@@ -1,4 +1,5 @@
 #include "lotto_service.h"
+#include <stdio.h>
 
 lotto_service make_lotto_service()
 {
@@ -22,7 +23,8 @@ int	buy_lottos(lotto_service *service, int money)
 
 	while (amount > 0)
 	{
-		numbers = get_numbers(shuffle(service->balls), 6);
+		service->balls = shuffle(service->balls);
+		numbers = get_numbers(service->balls, 6);
 		buy(&service->lottos, numbers);
 		amount--;
 	}

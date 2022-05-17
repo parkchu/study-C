@@ -31,9 +31,9 @@ balls	shuffle(balls balls)
 	int	random_number;
 	int	number;
 
-	srand(time(NULL));
 	while (index < 45)
 	{
+		srand(time(NULL) * index);
 		random_number = rand() % 45;
 		number = balls.value[index];
 		balls.value[index] = balls.value[random_number];
