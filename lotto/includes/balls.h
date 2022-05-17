@@ -6,7 +6,10 @@ typedef struct s_balls
 	int value[45];
 } balls;
 
-void	init(balls *balls);
+balls	make_balls();
 
-void	get_numbers(balls balls, int *numbers, int size);
+int	*get_numbers(balls balls, int size);
+
+balls	shuffle(balls balls);
+
 #endif

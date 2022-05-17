@@ -1,6 +1,20 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include "balls.h"
+
+int	main(void)
+{
+	int		index = 0;
+	balls	balls = make_balls();
+
+	balls = shuffle(balls);
+	while (index < 45)
+	{
+		printf("number: %d\n", balls.value[index]);
+		index++;
+	}
+}
 
 balls	make_balls()
 {
@@ -13,16 +27,6 @@ balls	make_balls()
 		number++;
 	}
 	return balls;
-}
-
-int	*get_numbers(balls balls, int size)
-{
-	int	*numbers;
-
-	numbers = malloc(sizeof(int) * size);
-	while (--size >= 0)
-		numbers[size] = balls.value[size];
-	return numbers;
 }
 
 balls	shuffle(balls balls)

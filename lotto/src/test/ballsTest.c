@@ -15,7 +15,7 @@ TEST(ballsTest, init)
 {
 	balls balls;
 
-	init(&balls);
+	balls = make_balls();
 
 	TEST_ASSERT_EQUAL(balls.value[0], 1);
 	TEST_ASSERT_EQUAL(balls.value[44], 45);
@@ -23,11 +23,10 @@ TEST(ballsTest, init)
 
 TEST(ballsTest, get_six_numbers)
 {
-	balls balls;
-	int	numbers[6];
-	init(&balls);
+	balls balls = make_balls();
+	int	*numbers;
 
-	get_numbers(balls, numbers, 6);
+	numbers = get_numbers(balls, 6);
 
 	TEST_ASSERT_EQUAL(numbers[0], 1);
 	TEST_ASSERT_EQUAL(numbers[1], 2);
