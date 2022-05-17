@@ -6,6 +6,7 @@ static void	RunAllTests(void)
 	RUN_TEST_GROUP(lottoTest);
 	RUN_TEST_GROUP(utilTest);
 	RUN_TEST_GROUP(rankingTest);
+	RUN_TEST_GROUP(lottosTest);
 }
 
 int	main(int argc, const char *argv[])
