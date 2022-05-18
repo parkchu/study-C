@@ -2,7 +2,6 @@
 #define LOTTO_SERVICE_H
 #include "balls.h"
 #include "lottos.h"
-#include "ranking.h"
 
 typedef struct s_lotto_service
 {

@@ -4,15 +4,16 @@
 lotto_service make_lotto_service()
 {
 	lotto_service service;
-	int	index = 0;
 
 	service.balls = make_balls();
 	service.lottos = make_lottos();
-	while (index < 7)
-	{
-		service.ranking[index] = 0;
-		index++;
-	}
+	service.ranking[0] = 0;
+	service.ranking[1] = 0;
+	service.ranking[2] = 0;
+	service.ranking[3] = 5000;
+	service.ranking[4] = 50000;
+	service.ranking[5] = 1500000;
+	service.ranking[6] = 2000000000;
 	return service;
 }
 
@@ -34,13 +35,13 @@ int	buy_lottos(lotto_service *service, int money)
 int	get_prize_money(lotto_service *service, int *correct_numbers)
 {
 	int	prize_money = 0;
-	int	count = 0;
+	int	rank = 0;
 
-	set_ranking(service->lottos, service->ranking, correct_numbers);
-	while (count <= 6)
+	set_ranking(&service->lottos, correct_numbers);
+	while (rank <= 6)
 	{
-		prize_money += service->ranking[count] * get_money(count);
-		count++;
+		prize_money += service->lottos.ranking[rank] * service->ranking[rank];
+		rank++;
 	}
 	return prize_money;
 }

@@ -5,7 +5,6 @@ static void	RunAllTests(void)
 	RUN_TEST_GROUP(ballsTest);
 	RUN_TEST_GROUP(lottoTest);
 	RUN_TEST_GROUP(utilTest);
-	RUN_TEST_GROUP(rankingTest);
 	RUN_TEST_GROUP(lottosTest);
 	RUN_TEST_GROUP(serviceTest);
 }

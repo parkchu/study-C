@@ -69,6 +69,6 @@ void	show_result(int *ranking, int use_money, int prize_money)
 	printf("4개 일치 (50000원)- %d개\n", ranking[4]);
 	printf("5개 일치 (1500000원)- %d개\n", ranking[5]);
 	printf("6개 일치 (2000000000원)- %d개\n", ranking[6]);
-	rate_of_return = prize_money / use_money;
+	rate_of_return = (float) prize_money / (float) use_money;
 	printf("총 수익률은 %.3f입니다.(기준이 1이기 때문에 1을 넘기지 못했으면 손해입니다)\n", rate_of_return);
 }

@@ -11,6 +11,28 @@ TEST_TEAR_DOWN(serviceTest)
 {
 }
 
+TEST(serviceTest, get_money)
+{
+	lotto_service service = make_lotto_service();
+	int	first = 0;
+	int	second = 0;
+	int	third = 0;
+	int	fourth = 0;
+	int	fifth = 1;
+
+	first = service.ranking[6];
+	second = service.ranking[5];
+	third = service.ranking[4];
+	fourth = service.ranking[3];
+	fifth = service.ranking[2];
+
+	TEST_ASSERT_EQUAL(first, 2000000000);
+	TEST_ASSERT_EQUAL(second, 1500000);
+	TEST_ASSERT_EQUAL(third, 50000);
+	TEST_ASSERT_EQUAL(fourth, 5000);
+	TEST_ASSERT_EQUAL(fifth, 0);
+}
+
 TEST(serviceTest, buy_lottos)
 {
 	lotto_service service = make_lotto_service();
@@ -39,6 +61,7 @@ TEST(serviceTest, get_prize_money)
 
 TEST_GROUP_RUNNER(serviceTest)
 {
+	RUN_TEST_CASE(serviceTest, get_money);
 	RUN_TEST_CASE(serviceTest, buy_lottos);
 	RUN_TEST_CASE(serviceTest, get_prize_money);
 }

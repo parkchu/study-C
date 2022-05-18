@@ -8,10 +8,10 @@ int	main(void)
 	int	prize_money = 0;
 	int correct_numbers[6] = {0, };
 
-	buy_lottos(&service, money);
+	money -= buy_lottos(&service, money);
 	show_lottos(service.lottos.size, service.lottos.value);
 	input_correct_numbers(correct_numbers);
-	prize_money = get_prize_money(&service, correct_numbers);
-	show_result(service.ranking, money, prize_money);
+	prize_money += get_prize_money(&service, correct_numbers);
+	show_result(service.lottos.ranking, money, prize_money);
 	return 0;
 }
