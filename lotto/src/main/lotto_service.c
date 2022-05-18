@@ -1,6 +1,5 @@
-#include "lotto_service.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include "lotto_service.h"
 
 lotto_service make_lotto_service()
 {
