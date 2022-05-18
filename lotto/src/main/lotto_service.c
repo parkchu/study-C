@@ -24,8 +24,7 @@ int	buy_lottos(lotto_service *service, int money)
 
 	while (amount > 0)
 	{
-		service->balls = shuffle(service->balls);
-		numbers = get_numbers(service->balls, 6);
+		numbers = get_numbers(shuffle(service->balls, amount), 6);
 		buy(&service->lottos, numbers);
 		amount--;
 	}

@@ -25,15 +25,15 @@ int	*get_numbers(balls balls, int size)
 	return numbers;
 }
 
-balls	shuffle(balls balls)
+balls	shuffle(balls balls, int seed)
 {
 	int	index = 0;
 	int	random_number;
 	int	number;
 
+	srand(time(NULL) + seed);
 	while (index < 45)
 	{
-		srand(time(NULL) * index);
 		random_number = rand() % 45;
 		number = balls.value[index];
 		balls.value[index] = balls.value[random_number];

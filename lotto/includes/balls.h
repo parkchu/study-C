@@ -10,6 +10,6 @@ balls	make_balls();
 
 int	*get_numbers(balls balls, int size);
 
-balls	shuffle(balls balls);
+balls	shuffle(balls balls, int seed);
 
 #endif
