@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lotto.h"
 
 int	input_money()
 {
@@ -11,17 +10,17 @@ int	input_money()
 	return money;
 }
 
-void	show_lotto(lotto lotto)
+void	show_lotto(int *lotto)
 {
-	printf("[%d, ", lotto.numbers[0]);
-	printf("%d, ", lotto.numbers[1]);
-	printf("%d, ", lotto.numbers[2]);
-	printf("%d, ", lotto.numbers[3]);
-	printf("%d, ", lotto.numbers[4]);
-	printf("%d]\n", lotto.numbers[5]);
+	printf("[%d, ", lotto[0]);
+	printf("%d, ", lotto[1]);
+	printf("%d, ", lotto[2]);
+	printf("%d, ", lotto[3]);
+	printf("%d, ", lotto[4]);
+	printf("%d]\n", lotto[5]);
 }
 
-void	show_lottos(int	size, lotto *lottos)
+void	show_lottos(int	size, int **lottos)
 {
 	int	index = 0;
 

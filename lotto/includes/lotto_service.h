@@ -14,6 +14,8 @@ lotto_service	make_lotto_service();
 
 int	buy_lottos(lotto_service *service, int money);
 
+int	**get_lotto_numbers(lotto_service service);
+
 int get_prize_money(lotto_service *service, int *correct_numbers);
 
 #endif

@@ -1,5 +1,6 @@
 #include "lotto_service.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 lotto_service make_lotto_service()
 {
@@ -30,6 +31,20 @@ int	buy_lottos(lotto_service *service, int money)
 		amount--;
 	}
 	return money % 1000;
+}
+
+int	**get_lotto_numbers(lotto_service service)
+{
+	int	**numbers;
+	int	index = 0;
+
+	numbers = malloc(sizeof(int*) * service.lottos.size);
+	while (index < service.lottos.size)
+	{
+		numbers[index] = service.lottos.value[index].numbers;
+		index++;
+	}
+	return numbers;
 }
 
 int	get_prize_money(lotto_service *service, int *correct_numbers)

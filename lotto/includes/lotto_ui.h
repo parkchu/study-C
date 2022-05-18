@@ -1,10 +1,9 @@
 #ifndef LOTTO_UI_H
 #define LOTTO_UI_H
-#include "lotto.h"
 
 int	input_money();
 
-void	show_lottos(int size, lotto *lottos);
+void	show_lottos(int size, int **lottos);
 
 void	input_correct_numbers(int *correct_numbers);
 
